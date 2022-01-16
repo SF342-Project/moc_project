@@ -18,14 +18,12 @@ import {
   View,
 } from 'react-native';
 
+import Providers  from './navigation/Index';
 
 const App = () => {
 
-
   return (
-    <SafeAreaView>
-      <Text>Hello</Text>
-    </SafeAreaView>
+    <Providers/>
   );
 };
 
