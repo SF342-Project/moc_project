@@ -14,6 +14,7 @@ import {FlatList} from 'react-native-gesture-handler';
 import data from '../assests/data/bangkok.json';
 const {width, height} = Dimensions.get('window');
 export default class TongfahLocation extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
