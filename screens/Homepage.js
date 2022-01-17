@@ -17,7 +17,12 @@ const Home = ({navigation}) => {
       <Text>Hello</Text>
       <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate('TongfahScreen')}>
         <Text style={styles.ButtonText}>
-          Tongfah Location
+          สถานที่ร้านธงฟ้า
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate('ComparePrice')}>
+        <Text style={styles.ButtonText}>
+          เปรียบเทียบราคาสินค้า
         </Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -48,7 +53,7 @@ const styles = StyleSheet.create({
   
     container: {
       flex: 1,
-      backgroundColor: '#E2FCFA',
+      backgroundColor: '#fff',
       alignItems: 'center',
       paddingHorizontal: 20,
       paddingTop: 50,

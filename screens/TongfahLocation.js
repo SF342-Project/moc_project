@@ -32,10 +32,10 @@ export default class TongfahLocation extends Component {
   render() {
     return (
       <SafeAreaView>
-        <StatusBar barStyle="light-content" backgroundColor="#ff5b77" />
+        <StatusBar barStyle="light-content" backgroundColor="#091D42" />
         <View style={styles.header}>
           <TextInput
-            placeholder="Enter Text..."
+            placeholder="ชื่อร้าน, เขต, จังหวัด, ..."
             placeholderTextColor="gray"
             value={this.state.query}
             onChangeText={text => this.onChangeText(text)}
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   header: {
     height: 80,
     width: '100%',
-    backgroundColor: '#ff5b77',
+    backgroundColor: '#091D42',
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center',
