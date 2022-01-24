@@ -4,7 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function SplashScreen({navigation}) {
     setTimeout(() => {
-      navigation.navigate('Home');
+      navigation.navigate('Login');
     }, 3000);
   return (
     <SafeAreaView style={styles.container}>

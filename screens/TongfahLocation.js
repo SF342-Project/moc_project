@@ -1,18 +1,18 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
 import {
   View,
   Text,
   SafeAreaView,
   StyleSheet,
   StatusBar,
-  Dimensions,
   TextInput,
+  TouchableOpacity
+  
 } from 'react-native';
 import {Component} from 'react/cjs/react.production.min';
 import {FlatList} from 'react-native-gesture-handler';
 import data from '../assests/data/bangkok.json';
-const {width, height} = Dimensions.get('window');
+
 export default class TongfahLocation extends Component {
   constructor(props) {
     super(props);
@@ -31,13 +31,19 @@ export default class TongfahLocation extends Component {
 
   render() {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={{backgroundColor:'#fff'}}>
         <StatusBar barStyle="light-content" backgroundColor="#091D42" />
+        <TouchableOpacity onPress={() => {
+                    this.props.navigation.goBack();
+                  }}>
+        <Text>
+          back
+        </Text>
+      </TouchableOpacity>
         <View style={styles.header}>
           <TextInput
             placeholder="ชื่อร้าน, เขต, จังหวัด, ..."
             placeholderTextColor="gray"
-            value={this.state.query}
             onChangeText={text => this.onChangeText(text)}
             style={styles.input}
           />
@@ -60,7 +66,7 @@ export default class TongfahLocation extends Component {
             );
             
           }}
-          ListFooterComponent={()=>
+          ListEmptyComponent={()=>
             <View style={{
                 alignItems:'center',
                 justifyContent: 'center'
@@ -97,7 +103,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    height: 45,
+    height: 40,
     width: '90%',
     backgroundColor: '#fff',
     borderRadius: 20,

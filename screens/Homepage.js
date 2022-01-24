@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useContext, useEffect } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -10,8 +10,10 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-
+import { AuthContext } from '../navigation/AuthProviders';
 const Home = ({navigation}) => {
+  const { user, logout } = useContext(AuthContext);
+
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello</Text>
@@ -25,6 +27,9 @@ const Home = ({navigation}) => {
           เปรียบเทียบราคาสินค้า
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.logoutButton} onPress={() => logout()}>
+              <Text style={styles.logoutText}>LOG OUT</Text>
+            </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -57,6 +62,19 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       paddingHorizontal: 20,
       paddingTop: 50,
+    },
+    logoutButton: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 25,
+      backgroundColor: '#000',
+      borderRadius: 10,
+    },
+    logoutText: {
+      padding: 10,
+      fontSize: 24,
+      color: '#F0FFFF',
+      
     },
   
   });
