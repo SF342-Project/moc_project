@@ -11,6 +11,7 @@ app.get('/product/:id',(req,res) =>{
     var filtered = _.where(mock_data,{'id':req.params.id})
     res.send(filtered)
 })
+
 function findKeyword(kw){
     var result=[];
     for(var i = 0; i<mock_data.length;i++){
@@ -20,9 +21,9 @@ function findKeyword(kw){
     }
     return result;
 }
+
 app.get('/product/keyword/:keyword',(req,res) =>{
     var filtered = findKeyword(req.params.keyword);
-    
     res.send(filtered)
 })
 
